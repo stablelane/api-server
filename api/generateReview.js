@@ -1,8 +1,9 @@
 const dotenv = require('dotenv');
 dotenv.config();
-
+const cors = require('cors');
 
 async function handler(req, res) {
+  cors()(req, res, () => {});
   if (req.method === 'POST') {
     const { keywords, rating } = req.body;
 
