@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Proxy endpoint
 app.use('/api', (req, res) => {
-  res.redirect('https://api-server-nine-mu.vercel.app/api' + req.path);
+  res.redirect('https://api-server-ochre.vercel.app/api' + req.path);
 });
 
 app.listen(port, () => {
