@@ -25,9 +25,7 @@ async function handler(req, res) {
       });
 
       const data = await response.json();
-      res.status(200).json({
-        "api": process.env.OPENAI_API_KEY,
-      });
+      res.status(200).json(process.env.OPENAI_API_KEY);
     } catch (error) {
       console.error('Error fetching data from OpenAI:', error.response?.data || error.message);
       res.status(500).json({ message: 'Internal Server Error' });
