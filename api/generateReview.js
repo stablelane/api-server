@@ -24,7 +24,8 @@ export default async function handler(req, res) {
         }
       );
 
-      res.status(200).json(response.data);
+      const data = await response.json();
+      res.status(200).json(data);
     } catch (error) {
       console.error('Error fetching data from OpenAI:', error.response?.data || error.message);
       res.status(500).json({ message: 'Internal Server Error' });
