@@ -1,11 +1,11 @@
-import axios from 'axios';
+
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { keywords, rating } = req.body;
 
     try {
-      const response = await axios.post(
+      const response = await fetch(
         'https://api.openai.com/v1/chat/completions',
         {
           model: 'gpt-3.5-turbo',

@@ -17,7 +17,6 @@ app.use('/api', (req, res) => {
   res.redirect('https://api-server-nine-mu.vercel.app/api' + req.path);
 });
 
-
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
