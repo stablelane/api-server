@@ -1,0 +1,3 @@
+POST http://localhost:5000/api/generateReview
+Content-Type: 'application/json',
+body: JSON.stringify({ keywords, rating })
