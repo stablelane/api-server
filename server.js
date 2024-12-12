@@ -2,8 +2,6 @@ const express = require('express');
 
 const dotenv = require('dotenv');
 const cors = require('cors');
-const handler = require('./api/generateReview.js');
-
 
 dotenv.config();
 
@@ -15,10 +13,9 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 // Proxy endpoint
-// app.use('/api', (req, res) => {
-//   res.redirect('https://api-server-ochre.vercel.app/api' + req.path);
-// });
-app.post('/api/generateReview', handler);
+app.use('/api', (req, res) => {
+  res.redirect('https://api-server-ochre.vercel.app/api' + req.path);
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
